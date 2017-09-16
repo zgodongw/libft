@@ -7,3 +7,5 @@ open a unix terminal and simply use:
 
 man  [-acdfFhkKtwW]  [--path]  [-m  system] [-p string] [-C config_file] [-M pathlist] [-P pager] [-B browser] [-H
        htmlpager] [-S section_list] [section] name ...
+
+eg: man 3 putchar 
