@@ -6,7 +6,7 @@
 #    By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/31 15:34:27 by zgodongw          #+#    #+#              #
-#    Updated: 2017/09/16 16:05:39 by zgodongw         ###   ########.fr        #
+#    Updated: 2017/09/16 16:19:48 by zgodongw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -144,8 +144,7 @@ RM = /bin/rm -f
 
 all: $(NAME)
 
-$(NAME):
-	
+$(NAME):	
 	@gcc $(FLAGS) $(SRCS) $(INC)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
