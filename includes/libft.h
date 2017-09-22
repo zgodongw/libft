@@ -92,5 +92,7 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_push(t_stack **stack, int i);
 int				ft_pop(t_stack **stack);
+t_list			*frontaddlink(t_list *list, char *str);
+void			addlink(t_list **list, char *str);
 
 #endif
