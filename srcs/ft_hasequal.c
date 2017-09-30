@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frontaddlink.c                                  :+:      :+:    :+:   */
+/*   ft_hasequal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 11:42:30 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/30 13:37:56 by zgodongw         ###   ########.fr       */
+/*   Created: 2017/09/30 13:24:04 by zgodongw          #+#    #+#             */
+/*   Updated: 2017/09/30 13:24:43 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*frontaddlink(t_list *list, char *str)
+char	*ft_hasequal(char *s)
 {
-	t_list	*tmp;
+	int		len;
+	int		i;
+	char	*str;
 
-	tmp = (t_list *)malloc(sizeof(t_list));
-	if (tmp)
+	i = 0;
+	len = ft_strlen(s);
+	if (ft_strchr(s, '=') == NULL)
 	{
-		tmp->content = str;
-		tmp->next = list;
+		str = (char *)malloc(sizeof(char *) * (len + 1));
+		while (s[i])
+		{
+			str[i] = s[i];
+			i++;
+		}
+		str[i] = '=';
+		str[i + 1] = '\0';
+		return (str);
 	}
-	return (tmp);
+	else
+		return (s);
 }

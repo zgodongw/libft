@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frontaddlink.c                                  :+:      :+:    :+:   */
+/*   ft_arraylen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 11:42:30 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/30 13:37:56 by zgodongw         ###   ########.fr       */
+/*   Created: 2017/09/30 13:35:48 by zgodongw          #+#    #+#             */
+/*   Updated: 2017/09/30 13:35:51 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*frontaddlink(t_list *list, char *str)
+size_t		ft_arraylen(char **array)
 {
-	t_list	*tmp;
+	size_t	i;
 
-	tmp = (t_list *)malloc(sizeof(t_list));
-	if (tmp)
-	{
-		tmp->content = str;
-		tmp->next = list;
-	}
-	return (tmp);
+	i = 0;
+	while (array[i])
+		i++;
+	return (i);
 }

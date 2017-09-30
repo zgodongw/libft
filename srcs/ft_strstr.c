@@ -22,6 +22,8 @@ char	*ft_strstr(const char *s1, const char *s2)
 	i = 0;
 	pos = 0;
 	len = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	while (s2[len] != '\0')
 		len++;
 	if (len == 0)

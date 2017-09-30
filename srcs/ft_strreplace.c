@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frontaddlink.c                                  :+:      :+:    :+:   */
+/*   ft_strreplace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 11:42:30 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/30 13:37:56 by zgodongw         ###   ########.fr       */
+/*   Created: 2017/09/30 13:41:53 by zgodongw          #+#    #+#             */
+/*   Updated: 2017/09/30 13:41:55 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*frontaddlink(t_list *list, char *str)
+char	*ft_strreplace(char *src, char *from, char *to)
 {
-	t_list	*tmp;
+	char		*f;
+	char		*str;
+	size_t		len1;
+	size_t		len2;
 
-	tmp = (t_list *)malloc(sizeof(t_list));
-	if (tmp)
+	str = NULL;
+	if ((f = ft_strstr(src, from)))
 	{
-		tmp->content = str;
-		tmp->next = list;
+		len1 = f - src;
+		len2 = ft_strlen(f + ft_strlen(from));
+		str = ft_memalloc(sizeof(char) * (len1 + ft_strlen(to) + len2 + 1));
+		if (str)
+		{
+			str = ft_strncpy(str, src, len1);
+			str = ft_strcat(str, to);
+			str = ft_strcat(str, f + ft_strlen(from));
+		}
 	}
-	return (tmp);
+	return (str);
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frontaddlink.c                                  :+:      :+:    :+:   */
+/*   ft_hasprintable.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 11:42:30 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/30 13:37:56 by zgodongw         ###   ########.fr       */
+/*   Created: 2017/09/30 13:38:14 by zgodongw          #+#    #+#             */
+/*   Updated: 2017/09/30 13:38:15 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*frontaddlink(t_list *list, char *str)
+int		ft_hasprintable(char *str)
 {
-	t_list	*tmp;
+	int		i;
 
-	tmp = (t_list *)malloc(sizeof(t_list));
-	if (tmp)
+	i = 0;
+	while (*str)
 	{
-		tmp->content = str;
-		tmp->next = list;
+		if (ft_isspace(*str) == 1)
+			str++;
+		else
+		{
+			i++;
+			str++;
+		}
 	}
-	return (tmp);
+	return (i);
 }

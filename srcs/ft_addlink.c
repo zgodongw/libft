@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 11:42:08 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/09/22 11:44:15 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/30 13:36:28 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_addlink(t_list **head, char *str)
 {
-	t_list *newNode;
+	t_list *newnode;
 	t_list *temp;
 
-	newNode = (t_list *)malloc(sizeof(t_list));
-	newNode->content = str;
-	newNode->next = NULL;
+	newnode = (t_list *)malloc(sizeof(t_list));
+	newnode->content = str;
+	newnode->next = NULL;
 	temp = *head;
 	if (*head == NULL)
-		*head = newNode;
+		*head = newnode;
 	else
 	{
 		while (temp->next != NULL)
 			temp = temp->next;
-		temp->next = newNode;
+		temp->next = newnode;
 	}
 }

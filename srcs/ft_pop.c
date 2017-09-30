@@ -6,7 +6,7 @@
 /*   By: zgodongw <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/20 13:20:18 by zgodongw          #+#    #+#             */
-/*   Updated: 2017/08/21 15:24:02 by zgodongw         ###   ########.fr       */
+/*   Updated: 2017/09/30 13:39:51 by zgodongw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_pop(t_stack **stack)
 {
-	int	num;
-	t_stack	*tmp;
+	int			num;
+	t_stack		*tmp;
 
 	num = (*stack)->i;
 	tmp = (*stack);
